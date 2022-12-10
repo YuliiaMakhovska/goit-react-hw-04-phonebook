@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
-import {FormField, Input, Label, Button} from './ContactForm.styled'
+import { FormStyled, FieldStyled, Label, Button } from './ContactForm.styled';
 import { Formik, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid';
 
@@ -20,9 +20,9 @@ const ContactForm = ({ onSubmit }) => {
   const nameId = nanoid();
   const numberId = nanoid();
 
-  const handleSubmit = (values, { resetForm }) => {
+  
+  const handleSubmit = ( values, { resetForm }) => {
     onSubmit(values);
-
     resetForm();
   };
   const initialValues = {
@@ -35,10 +35,10 @@ const ContactForm = ({ onSubmit }) => {
       validationSchema={schema}
       onSubmit={handleSubmit}
     >
-      <FormField>
+      <FormStyled>
         <Label htmlFor={nameId}>
           Name
-          <Input
+          <FieldStyled
             type="text"
             name="name"
             id={nameId}
@@ -51,7 +51,7 @@ const ContactForm = ({ onSubmit }) => {
 
         <Label htmlFor={numberId}>
           Number
-          <Input
+          <FieldStyled
             type="tel"
             name="number"
             id={numberId}
@@ -62,14 +62,13 @@ const ContactForm = ({ onSubmit }) => {
           <FormError FormError name="number" />
         </Label>
         <Button type="submit">Add contact</Button>
-      </FormField>
+      </FormStyled>
     </Formik>
   );
 };
 
 ContactForm.propTypes = {
-  nameId: PropTypes.string,
-  numberId: PropTypes.string,
+onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
