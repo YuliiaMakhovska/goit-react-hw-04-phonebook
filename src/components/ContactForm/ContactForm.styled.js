@@ -13,6 +13,7 @@ export const Label = styled.label`
   justify-content: center;
   align-items: flex-start;
   color: black;
+  font-size: 18px;
   cursor: pointer;
   p {
     margin: 10px;

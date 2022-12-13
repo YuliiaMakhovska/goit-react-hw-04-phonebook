@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as Yup from 'yup';
+// import { FiPhone, FiUser } from "react-icons/fi";
 import { FormStyled, FieldStyled, Label, Button } from './ContactForm.styled';
 import { Formik, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid';
