@@ -18,8 +18,7 @@ export const App = () => {
   const addContacts = ({ name, number }) => {
     const normalizedName = name.toLowerCase();
     const existName = contacts.find(contact =>
-      contact.name.toLowerCase().includes(normalizedName)
-    );
+      contact.name.toLowerCase() === normalizedName);
     if (existName) {
       Report.failure(`${normalizedName} is already in contacts`);
       return;
